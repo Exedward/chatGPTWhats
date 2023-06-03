@@ -1,0 +1,510 @@
+[
+    {
+        "id": "1614b3c5ab5a39b5",
+        "type": "tab",
+        "label": "whatsappBot",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c9612d24c9a7a281",
+        "type": "inject",
+        "z": "1614b3c5ab5a39b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Teste",
+        "payloadType": "str",
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "5a8e8d0da348f06f"
+            ]
+        ]
+    },
+    {
+        "id": "5a8e8d0da348f06f",
+        "type": "admin",
+        "z": "1614b3c5ab5a39b5",
+        "name": "WA Admin",
+        "whatsappLink": "477daaa41e0d23b2",
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "eaea5aec02c63830"
+            ]
+        ]
+    },
+    {
+        "id": "beec77dea5ea55c2",
+        "type": "chats-in",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Chats In",
+        "whatsappLink": "477daaa41e0d23b2",
+        "whatsappLiteevent": "",
+        "whatsappWebevent": "message_create",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "efbc6c919e04fddd",
+                "ee5e665811560042"
+            ]
+        ]
+    },
+    {
+        "id": "efbc6c919e04fddd",
+        "type": "debug",
+        "z": "1614b3c5ab5a39b5",
+        "name": "d2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "eaea5aec02c63830",
+        "type": "debug",
+        "z": "1614b3c5ab5a39b5",
+        "name": "d1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5155cd75edc568d0",
+        "type": "chats-out",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Chats Out",
+        "whatsappLink": "477daaa41e0d23b2",
+        "number": "+5585997498597",
+        "x": 780,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "44f34c4398294880",
+        "type": "jimp-image",
+        "z": "1614b3c5ab5a39b5",
+        "name": "teste1",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "b64",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "image",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 290,
+        "y": 740,
+        "wires": [
+            [
+                "97e762b95fbbb4f8"
+            ]
+        ]
+    },
+    {
+        "id": "34d038da148a96f3",
+        "type": "inject",
+        "z": "1614b3c5ab5a39b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "C:\\Users\\Eduardo\\Downloads\\teste.jpg",
+        "payloadType": "str",
+        "x": 150,
+        "y": 740,
+        "wires": [
+            [
+                "44f34c4398294880"
+            ]
+        ]
+    },
+    {
+        "id": "97e762b95fbbb4f8",
+        "type": "function",
+        "z": "1614b3c5ab5a39b5",
+        "name": "F6",
+        "func": "msg.payload = \"Olá, diz aí? Teste aqui\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c25510d0b4ec187",
+        "type": "comment",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Envia imagem e texto",
+        "info": "",
+        "x": 280,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "f1bbd6ed57e6157a",
+        "type": "function",
+        "z": "1614b3c5ab5a39b5",
+        "name": "F1",
+        "func": "var api_key = \"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\"\n\nvar mensagem = msg.message.body\nif(mensagem == 'LIGAR LED1'){\n    msg.img = \"C:\\\\Users\\\\Eduardo\\\\Documents\\\\ControleWhatsapp\\\\Imagens\\\\ligado.jpeg\"\n    msg.payload = \"😉 *Sucesso! LED1 Ligado.*\"\n}\nelse if(mensagem == 'DESLIGAR LED1'){\n    msg.img = \"C:\\\\Users\\\\Eduardo\\\\Documents\\\\ControleWhatsapp\\\\Imagens\\\\desligado.jpeg\"\n    msg.payload = \"😉 *Sucesso! LED1 Desligado.*\"\n}\nelse{\n    msg.payload = \"nada\"\n}\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 720,
+        "wires": [
+            [
+                "6091e22c76acc0d9"
+            ]
+        ]
+    },
+    {
+        "id": "70b40fe8f8293716",
+        "type": "delay",
+        "z": "1614b3c5ab5a39b5",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 780,
+        "wires": [
+            [
+                "52f2d76bc8d369ac"
+            ]
+        ]
+    },
+    {
+        "id": "52f2d76bc8d369ac",
+        "type": "jimp-image",
+        "z": "1614b3c5ab5a39b5",
+        "name": "teste1",
+        "data": "img",
+        "dataType": "msg",
+        "ret": "b64",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "image",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 950,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6091e22c76acc0d9",
+        "type": "switch",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Sw3",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "nada",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 650,
+        "y": 780,
+        "wires": [
+            [
+                "70b40fe8f8293716"
+            ]
+        ]
+    },
+    {
+        "id": "5bf08024b89eea25",
+        "type": "http request",
+        "z": "1614b3c5ab5a39b5",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "authType": "bearer",
+        "senderr": false,
+        "x": 330,
+        "y": 460,
+        "wires": [
+            [
+                "c8b490ad18dc1e0a"
+            ]
+        ]
+    },
+    {
+        "id": "c9aa1505d08aaf94",
+        "type": "function",
+        "z": "1614b3c5ab5a39b5",
+        "name": "F3",
+        "func": "msg.url = \"https://api.openai.com/v1/completions\"\nmsg.method = \"POST\"\n\nvar prompt = msg.message.body\n\nmsg.payload = {\n  \"prompt\":prompt,\n  \"model\": \"text-davinci-003\",\n  \"max_tokens\": 300,\n  \"temperature\": 0.7,\n  \"top_p\": 1,\n  \"presence_penalty\": 0.3,\n  \"frequency_penalty\": 0.5,\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "5bf08024b89eea25"
+            ]
+        ]
+    },
+    {
+        "id": "c8b490ad18dc1e0a",
+        "type": "change",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Ch1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.choices[0].text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 460,
+        "wires": [
+            [
+                "0713b02bbeb40de0"
+            ]
+        ]
+    },
+    {
+        "id": "c21095e7b06d0e1b",
+        "type": "switch",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Sw1",
+        "property": "valor",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "message.body",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "73545029e291c9b4"
+            ]
+        ]
+    },
+    {
+        "id": "ee5e665811560042",
+        "type": "function",
+        "z": "1614b3c5ab5a39b5",
+        "name": "F2",
+        "func": "msg.valor = flow.get(\"status\") || \"teste\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "c21095e7b06d0e1b"
+            ]
+        ]
+    },
+    {
+        "id": "94029d538af34b02",
+        "type": "debug",
+        "z": "1614b3c5ab5a39b5",
+        "name": "d3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "19a04a02ce94d91e",
+        "type": "comment",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Resposta E Imagem",
+        "info": "",
+        "x": 830,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0713b02bbeb40de0",
+        "type": "function",
+        "z": "1614b3c5ab5a39b5",
+        "name": "F4",
+        "func": "flow.set(\"status\", msg.payload)\nmsg.payload = \"▶️ *Sua resposta Sr. Eduardo:* \" + msg.payload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 460,
+        "wires": [
+            [
+                "5155cd75edc568d0",
+                "94029d538af34b02"
+            ]
+        ]
+    },
+    {
+        "id": "73545029e291c9b4",
+        "type": "switch",
+        "z": "1614b3c5ab5a39b5",
+        "name": "Sw2",
+        "property": "message.body",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "⏺️",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "c9aa1505d08aaf94"
+            ]
+        ]
+    },
+    {
+        "id": "477daaa41e0d23b2",
+        "type": "whatsappLink",
+        "cName": "whatsapp-web",
+        "name": "Web",
+        "clientType": "waWebClient",
+        "onlineStatus": false,
+        "loopTime": "5"
+    }
+]
